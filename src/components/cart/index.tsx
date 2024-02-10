@@ -18,7 +18,7 @@ export default function Cart(props: CartProps) {
       "
       >
         Total Price{" "}
-        <span className="bg-red-600 text-white rounded-md p-[2px] ">
+        <span className="bg-white text-red-500 rounded-md p-[2px] ">
           {totalPrice.toFixed(2)}
         </span>
       </span>
