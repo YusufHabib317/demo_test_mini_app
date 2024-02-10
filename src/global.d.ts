@@ -1,0 +1,8 @@
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Telegram: any;
+  }
+}
+
+export const tele = window.Telegram.WebApp;

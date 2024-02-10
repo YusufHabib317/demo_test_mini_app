@@ -3,14 +3,7 @@ import Card from "./components/card";
 import Cart from "./components/cart";
 import { getData } from "./db/db";
 import { CardFoodT } from "./types";
-
-declare global {
-  interface Window {
-    Telegram: any;
-  }
-}
-
-const tele = window.Telegram.WebApp;
+import { tele } from "./global";
 
 function App() {
   const foods = getData();
