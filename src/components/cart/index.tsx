@@ -1,5 +1,4 @@
 import { CardFoodT } from "../../types";
-import Button from "../ui/button";
 
 type CartProps = {
   cartItem: CardFoodT[];
@@ -12,16 +11,38 @@ export default function Cart(props: CartProps) {
 
   return (
     <div className="text-white w-full flex justify-center items-center gap-16">
-      {cartItem.length === 0 ? "No Items In Carts" : ""}
+      <span
+        className="
+        text-white text-[14px] py-[0.6rem] px-[0.8rem] ml-[10px] rounded-[10px]
+        w-[100px] bg-red-400
+      "
+      >
+        Total Price{" "}
+        <span className="bg-red-600 text-white rounded-md p-[2px] ">
+          {totalPrice.toFixed(2)}
+        </span>
+      </span>
 
-      <br />
-      <span className="">Total Price = {totalPrice.toFixed(2)}</span>
-      <Button
-        label={cartItem.length === 0 ? "Order" : "Checkout"}
-        type="checkout"
-        disabled={cartItem.length === 0 ? true : false}
-        onClick={onCheckout}
-      />
+      {cartItem.length === 0 ? (
+        <button
+          className={`
+        text-white text-[14px] py-[0.6rem] px-[0.8rem] ml-[10px] rounded-[10px]
+        w-[100px] bg-red-400
+      `}
+        >
+          Order
+        </button>
+      ) : (
+        <button
+          className={`
+          text-white text-[14px] py-[0.6rem] px-[0.8rem] ml-[10px] rounded-[10px]
+          w-[100px] bg-red-400
+      `}
+          onClick={onCheckout}
+        >
+          Checkout
+        </button>
+      )}
     </div>
   );
 }

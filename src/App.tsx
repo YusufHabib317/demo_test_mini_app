@@ -49,13 +49,15 @@ function App() {
   };
 
   return (
-    <div className="bg-slate-800">
-      <div className="text-white mx-auto text-center p-5 font-bold text-4xl">
-        Your Order!
-      </div>
+    <div className="bg-red-100 font-sans flex flex-col">
+      <div className="p-5 bg-red-300 min-w-[200px] mx-auto rounded-lg mt-10">
+        <div className=" mx-auto text-center p-5 font-bold text-4xl text-slate-700 ">
+          Your Order!
+        </div>
 
-      <Cart cartItem={cartItem} onCheckout={onCheckout} />
-      <div className="flex flex-wrap justify-center  p-10 gap-16 max-auto ">
+        <Cart cartItem={cartItem} onCheckout={onCheckout} />
+      </div>
+      <div className="flex flex-wrap justify-center p-2 gap-16 max-auto ">
         {foods.map((card) => {
           return (
             <Card card={card} key={card.id} onAdd={onAdd} onRemove={onRemove} />

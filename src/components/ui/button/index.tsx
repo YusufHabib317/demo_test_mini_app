@@ -11,16 +11,14 @@ export default function Button(props: ButtonProps) {
   return (
     <button
       className={`
-      py-[0.6rem] px-[0.8rem] text-[1.2rem] text-center border-0 outline-none rounded-[10px] font-bold text-neutral-800
-      w-[120px] ml-[10px] shadow-sm cursor-pointer active:scale-[0.98]
-      hover:
-      ${type === "add" && "bg-[#e0c521] hover:bg-[#cab320] active:bg-[#ad9a1c]"}
-      ${
-        type === "remove" && "bg-red-400 hover:bg-[#c15c5c] active:bg-[#be4d40]"
-      }
+       rounded-lg flex justify-center items-center px-3 py-1
+       text-slate-700
+  
+      ${type === "add" && "bg-[#ceebf6] hover:bg-[#b7e4f5] active:bg-[#ace2f5]"}
+      ${type === "remove" && "bg-red-400 hover:bg-red-500 active:bg-red-600"}
       ${
         type === "checkout" &&
-        "bg-emerald-600 w-[150px] hover:bg-emerald-700 active:bg-emerald-800 text-white text-[14px]"
+        "bg-emerald-600 w-[150px] hover:bg-emerald-700 active:bg-emerald-800 "
       }
 `}
       disabled={disabled}
@@ -30,3 +28,5 @@ export default function Button(props: ButtonProps) {
     </button>
   );
 }
+
+// py-[0.6rem] px-[0.8rem] w-[120px] ml-[10px] rounded-[10px]

@@ -33,14 +33,14 @@ export default function Card(props: CardProps) {
   return (
     <div
       className={`
-        flex flex-col justify-between w-[200px] h-[300px] rounded-lg shadow-lg border-2 border-[#e5cd7e] px-[0.3rem] py-[0.5rem]
+        flex flex-col justify-between  rounded-lg  p-2
         relative
     `}
     >
       <span
         className={`${
           count !== 0
-            ? "absolute opacity-85 transition-all duration-150 text-[20px] font-bold flex justify-center items-center -top-5 -right-5 w-[35px] h-[35px] rounded-full bg-orange-600 text-white anim"
+            ? "absolute opacity-85 transition-all duration-150 text-[18px] font-bold flex justify-center items-center -top-0 -right-0 w-[35px] h-[35px] rounded-full bg-orange-600 text-white anim"
             : "hidden"
         }`}
       >
@@ -55,12 +55,12 @@ export default function Card(props: CardProps) {
         />
       </div>
 
-      <h4 className="font-[500] text-center text-[20px] text-white">
+      <h4 className="font-[500] text-center text-[20px] text-slate-700  ">
         {card.title}{" "}
       </h4>
-      <div className="mx-auto text-white">Card Price : {card.price}</div>
+      <div className="mx-auto text-slate-700 ">$ {card.price}</div>
 
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-row justify-center gap-4">
         <Button label="+" type="add" onClick={handleIncrement} />
 
         {count !== 0 ? (
