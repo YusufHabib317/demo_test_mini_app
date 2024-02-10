@@ -11,7 +11,9 @@ function App() {
   const [cartItem, setCartItem] = useState<CardFoodT[]>([]);
 
   useEffect(() => {
-    tele.ready();
+    if (window.Telegram) {
+      tele.ready();
+    }
   }, []);
 
   const onAdd = (food: CardFoodT) => {
@@ -43,8 +45,10 @@ function App() {
   };
 
   const onCheckout = () => {
-    tele.mainButton.text = "Pay";
-    tele.mainButton.show();
+    if (window.Telegram) {
+      tele.mainButton.text = "Pay";
+      tele.mainButton.show();
+    }
   };
 
   return (
