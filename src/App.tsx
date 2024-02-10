@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     tele.ready();
-  }, []);
+  }, [tele]);
 
   const onAdd = (food: CardFoodT) => {
     const exist = cartItem.find((item) => item?.id === food.id);
