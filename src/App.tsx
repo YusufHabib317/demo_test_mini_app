@@ -3,17 +3,16 @@ import Card from "./components/card";
 import Cart from "./components/cart";
 import { getData } from "./db/db";
 import { CardFoodT } from "./types";
-import { tele } from "./global";
 
 function App() {
   const foods = getData();
 
   const [cartItem, setCartItem] = useState<CardFoodT[]>([]);
 
+  const tele = (window as any).Telegram.WebApp;
+
   useEffect(() => {
-    if (window.Telegram) {
-      tele.ready();
-    }
+    tele.ready();
   }, []);
 
   const onAdd = (food: CardFoodT) => {
@@ -45,10 +44,8 @@ function App() {
   };
 
   const onCheckout = () => {
-    if (window.Telegram) {
-      tele.mainButton.text = "Pay";
-      tele.mainButton.show();
-    }
+    tele.mainButton.text = "Pay";
+    tele.mainButton.show();
   };
 
   return (

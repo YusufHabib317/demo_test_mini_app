@@ -4,5 +4,3 @@ declare global {
     Telegram: any;
   }
 }
-
-export const tele = (window as any).Telegram.WebApp;
