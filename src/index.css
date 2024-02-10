@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary_color: "#e0c521";
+}
+.anim {
+  transform: translate(20px, -20px) scale3d(0.98);
+  animation: scalAnimation 1s ease infinite;
+}
+
+@keyframes scalAnimation {
+  to {
+    transform: translate(20px, -20px) scale3d(1.05);
+    opacity: 1;
+  }
+}
